@@ -16,7 +16,7 @@ function Form({ addContact, contacts }) {
   const onSubmit = (e) => {
     e.preventDefault();
     if (form.fullname === "" || form.phone_number === "") return false;
-    addContact([...contacts, form]);
+    addContact((prevState) => [...prevState, form]);
   };
 
   return (
